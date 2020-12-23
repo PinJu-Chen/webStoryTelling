@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -13,14 +14,15 @@
         #obj {
             background-image: url('assets/dl.png');
             position: absolute;
-            left: 0;
+            left: 0px;
             height: 40px;
             width: 50px;
-            background-color: rgb(64,64,64);
+            background-color: rgb(64, 64, 64);
         }
+
     </style>
 </head>
-<!--rgb(64,64,64)-->
+
 <body>
     <div style="min-height:100vh;background-image: url('assets/flower.jpg');background-repeat: no-repeat;
     background-attachment: fixed;background-position:center;background-size:cover;">
@@ -28,8 +30,11 @@
 
 
         <div id="navbar" class="container-fluid sticky-top" style="background-color:rgb(64,64,64);min-height:50px;">
-            <div id="obj" style="position: absolute;"></div>
+            <div id="obj"></div>
         </div>
+
+
+
 
         <div class="container-fluid" style="min-height:800px;">
             <div class="jumbotron-fluid text-center">
@@ -38,7 +43,7 @@
         </div>
 
         <div id="waterline" class="container-fluid" style="min-height:600px;
-                                                           background-color:rgba(36, 47, 82, 0.6);
+                                                           background-color:deepskyblue;
                                                            opacity: 0.6;">
             <h1>WATERLINE</h1>
         </div>
@@ -64,15 +69,19 @@
                 console.log(current_pos);
 
                 var new_left = max_w * current_pos / max_scroll;
-                $('#obj').css({
-                    'left': new_left
-                });
-
-
+                $('#obj').css({'left': new_left});
+                
+                var max_h = $(window).height() - $('#waterline').height();
+                
+                var new_bottom = max_h * current_pos / max_scroll;
+                $('#waterline').css({'height': new_bottom});
             });
         });
+
     </script>
 
+   
 
+</body>
 
-</body></html>
+</html>
